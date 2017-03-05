@@ -15,7 +15,7 @@ WORKDIR /go/src/github.com/gduryhk/cinema-users
 RUN go install github.com/gduryhk/cinema-users
 
 # Run the users microservice when the container starts.
-ENTRYPOINT /go/bin/users
+ENTRYPOINT /go/bin/cinema-users
 
 # Service listens on port 8080.
 EXPOSE 8080
