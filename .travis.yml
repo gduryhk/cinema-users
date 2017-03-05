@@ -17,7 +17,7 @@ after_success:
 - ssh docker@52.221.244.175 'docker info';
 - ssh docker@52.221.244.175 'docker stop cinema-users || true';
 - ssh docker@52.221.244.175 'docker rm -f cinema-users || true';
-- ssh docker@52.221.244.175 'docker run -d --name cinema-users --link db gdury/cinema-users';
+- ssh docker@52.221.244.175 'docker run -d --name cinema-users --link db gdury/cinema-users:$TRAVIS_BUILD_NUMBER';
 env:
   global:
     secure: hML4LXB7hB4tsS0XOgqJrYsEN0Yipq+A53Kj3JIm7JKurapxlYOeFmFAPeRY+rSbUbcO1R9czWNZEfe6/mJhHNoWxPjhWKM4lRCMGv5gtBYUqTkqJQSbKPBHtR1TIcBEH42M2oweq3W5OEROlrpjHXryHlRR6ohV2/hUeWtBqCV4a/n1HutIf0SkNekMnjuORcJB5Oc2VZJlEm+3nHojNAhefZcXXkGEboXvS3ybdkCKBM4gZ4j9TTKbd2TeiMvcfRUCLuHUcriP4OI6b+289xfpsh9zWtEEiw0AmnAwUNldvotOOtcFAxmWhUIH9yzQFZOoRuSt8fO4060MvTTZhwn92HrfwUKBt0jpW2IMpSgr+rR2nxpnfeJ4VlTmgzdNSxpVxKLltp6pIGofHXgyKbJfrneS+YA8kQOuhogpRKkhEqflqF0/O+NOsn5oUe1cWQKDzk6ppGhcL+c6kAyz8+V5iGoSqK5nY/fKDaX+xU+48lrFeOdeL+k6dHvLF2JPf89feYfhek1pF8wHEvz4i+UIFx6u5Q6Jy7LLVaGJXye/dQwl17HTvaahzvf4EgSNVUs459bJLquH53JmTq5JgNMDDXckQEUgfUaiV04+ZY1jlzPYIc4NEN4EuYphrf1hr8ZNoL9pea6FoEUH+po7aqMQIdOmCFqVm49zYp6y9TE=
