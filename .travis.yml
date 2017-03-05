@@ -6,6 +6,7 @@ services:
 - docker
 before_script:
 - openssl aes-256-cbc -pass "pass:$TRAVIS_CI_SECRET" -in ./.secret -out ./ecs.pem -d -a
+- eval "$(ssh-agent -s)"
 - chmod 400 ecs.pem
 - ssh-add ecs.pem
 before_install:
