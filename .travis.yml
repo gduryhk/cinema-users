@@ -2,6 +2,9 @@ sudo: required
 
 language: go
 
+addons:
+  ssh_known_hosts: 52.221.244.175
+
 services:
   - docker
 
@@ -13,3 +16,10 @@ after_success:
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push gdury/cinema-users:$TRAVIS_BUILD_NUMBER;
     fi
+  - echo '-----BEGIN RSA PRIVATE KEY-----' >> ecs.pem
+    && echo $DOCKER_CA_KEY | sed -e 's/\s\+/\n/g' >> ecs.pem
+    && echo '-----END RSA PRIVATE KEY-----' >> ecs.pem
+  - chmod 400 ecs.pem;
+    ssh -i "ecs.pem" docker@52.221.244.175;
+    docker node ls;
+
