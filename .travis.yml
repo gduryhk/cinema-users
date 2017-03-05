@@ -12,7 +12,7 @@ after_success:
 - if [ "$TRAVIS_BRANCH" == "master" ]; then docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
   docker push gdury/cinema-users:$TRAVIS_BUILD_NUMBER; fi
 - chmod 400 ecs.pem;
-  ssh -NL localhost:2374:/var/run/docker.sock docker@52.221.244.175 &;
+  ssh -NL localhost:2374:/var/run/docker.sock docker@52.221.244.175&;
   docker -H localhost:2374 info
 env:
   global:
