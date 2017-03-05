@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/gorilla/mux"
-	"github.com/sanguinius69/cinema-users/controllers"
+	"github.com/gduryhk/cinema-users/controllers"
 )
 
 func SetUsersRouters(router *mux.Router) *mux.Router {

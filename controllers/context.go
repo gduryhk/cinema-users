@@ -3,7 +3,7 @@ package controllers
 import (
 	"gopkg.in/mgo.v2"
 
-	"github.com/sanguinius69/cinema-users/common"
+	"github.com/gduryhk/cinema-users/common"
 )
 
 // Struct used for maintaining HTTP Request Context
