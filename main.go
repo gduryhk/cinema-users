@@ -20,6 +20,6 @@ func main() {
 		Addr:    common.AppConfig.Server,
 		Handler: router,
 	}
-	log.Println("Listening...")
+	log.Println("Listening as a dev version...")
 	server.ListenAndServe()
 }
